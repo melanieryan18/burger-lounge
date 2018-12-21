@@ -12,7 +12,7 @@ var orm = {
     },
     
     create : function(tableName, newBurger, callback){
-        var query = "INSERT INTO " +tableName+  "(name) VALUES ('" + newBurger+ "');";
+        var query = "INSERT INTO " +tableName+  "(burger) VALUES ('" + newBurger+ "');";
         connection.query(query, (err, result) => {
             if (err){
                 throw err
