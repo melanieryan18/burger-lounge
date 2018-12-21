@@ -23,16 +23,12 @@ $(document).ready(() => {
 
     // DEVOUR BURGER FROM MENU
     $(".eat-burger").on("click", function (event) {
+      event.preventDefault();
       var id = $(this).data("id");
-      var ateBurger = {
-        devoured: true
-      };
       // Send the DELETE request.
       $.ajax("/api/burgers/" + id, {
         method: "PUT"
       }).then(function (res) {
-        console.log("nomnomnomnom ", res);
-        // Reload the page to get the updated list
         location.reload();
       }
       );

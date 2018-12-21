@@ -27,19 +27,19 @@
     <div class="col-6">
       <h2>Available Burgs'</h2>
       {{#each burger}}
-      {{#unless this.devour}}
-
+      {{#unless this.devoured}}
       <p> {{this.burger}} </p>
       <button class="eat-burger" data-id="{{id}}">DEVOUR IT</button>
-
       {{/unless}}
       {{/each}}
       <h3>Devoured Burgs'</h3>
-      {{#each burger}}
-      {{#if this.devour}}
-      <p>{{this.burger}}</p>
-      {{/if}}
-      {{/each}}
+      <div class="devoured">
+        {{#each burger}}
+        {{#if this.devoured}}
+        <p>{{this.burger}}</p>
+        {{/if}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>

@@ -12,7 +12,8 @@ var burger = {
         });
     },
     update : function(id, callback){
-        orm.update('burgers', 'devour', "true" , "id", id, function(result){
+        orm.update('burgers', 'devoured', "true" , "id", id, function(result){
+            console.log("model update")
             callback(result);
         });
     }

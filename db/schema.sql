@@ -6,4 +6,6 @@ CREATE TABLE burgers (
 	devoured BOOLEAN DEFAULT FALSE    
 );
 
+USE burger_db;
+SELECT * FROM burgers;
     

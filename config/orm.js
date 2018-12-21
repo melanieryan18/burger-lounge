@@ -22,11 +22,12 @@ var orm = {
     },
 
     update : function(tableName, colName, newValue, conditionCol,ConditionValue, callback){
-        var query = "UPDATE " +tableName+ " SET " +colName+ " = "+newValue+" Where " + conditionCol +" = "+ConditionValue +";";
+        var query = "UPDATE " + tableName + " SET " + colName + " = "+ newValue +" Where " + conditionCol +" = "+ConditionValue +";";
         connection.query(query, (err, result) => {
             if (err){
                 throw err
             } 
+            console.log("ORM UPdate")
             callback(result)
         });
     }
