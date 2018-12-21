@@ -1,27 +1,35 @@
-var connection = require("../config/connection.js");
+var connection = require('./connection');
 
 var orm = {
-    all: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function (err, result) {
-            if (err) throw err;
-            cb(result);
+    all : function(tableName, callback){
+        var query = "SELECT * FROM " +tableName+ ";";
+        connection.query(query, (err, data) => {
+            if (err){
+                throw err
+            }
+            callback(data)
         });
     },
-    create: function (cols, vals, cb) {
-        var queryString = "INSERT INTO burgers WHERE burger = ?" + tableInput + ";";
-        connection.query(queryString, function (err, result) {
-            if (err) throw err;
-            cb(result);
+    
+    create : function(tableName, newBurger, callback){
+        var query = "INSERT INTO " +tableName+  "(name) VALUES ('" + newBurger+ "');";
+        connection.query(query, (err, result) => {
+            if (err){
+                throw err
+            }
+            callback(result)
         });
     },
 
-    delete: function (col, val) {
-        orm.delete("burgers", col, val, function (res) {
-            cb(res);
-        }
-        )
+    update : function(tableName, colName, newValue, conditionCol,ConditionValue, callback){
+        var query = "UPDATE " +tableName+ " SET " +colName+ " = "+newValue+" Where " + conditionCol +" = "+ConditionValue +";";
+        connection.query(query, (err, result) => {
+            if (err){
+                throw err
+            } 
+            callback(result)
+        });
     }
-};
+}
 
 module.exports = orm;

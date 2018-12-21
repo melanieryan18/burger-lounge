@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: black;
+    background: url('https://thumbs.dreamstime.com/z/seamless-burgers-background-appetizing-hand-drawn-illustration-55645616.jpg');
+}
+
+.container {
+    background-color: white;
+    opacity: .8;
+    padding: 30px 30px;
+}
