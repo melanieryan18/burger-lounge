@@ -17,3 +17,5 @@ Where users can get help with your project For assistance troubleshooting the NP
 For questions regarding usablity & functionality, email melaniehoperyan@gmail.com
 
 Who maintains and contributes to the project Melanie Ryan github.com/melanieryan18
+
+Application is deployed on Heroku at [Heroku](https://mels-burger-lounge.herokuapp.com/)
